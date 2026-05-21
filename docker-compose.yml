@@ -1,12 +1,5 @@
 services:
   web:
-    image: nginx:alpine
+    build: .
     ports:
       - "18080:80"
-    configs:
-      - source: index_html
-        target: /usr/share/nginx/html/index.html
-
-configs:
-  index_html:
-    file: ./index.html
