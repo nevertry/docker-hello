@@ -3,5 +3,10 @@ services:
     image: nginx:alpine
     ports:
       - "18080:80"
-    volumes:
-      - ./index.html:/usr/share/nginx/html/index.html:ro
+    configs:
+      - source: index_html
+        target: /usr/share/nginx/html/index.html
+
+configs:
+  index_html:
+    file: ./index.html
